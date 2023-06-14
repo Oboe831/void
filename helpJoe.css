@@ -1,0 +1,90 @@
+.charsheet .overview{
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  background-image: url(https://i.pinimg.com/564x/9d/95/67/9d9567025f4ed4264fe6cac9229a6c51.jpg);
+  background-repeat:space;
+  background-color: black;
+  background-position: center;
+}
+
+.charsheet .banner{
+  display: flex;
+  color: gainsboro;
+  grid-row: 1;
+  grid-column: span 2;
+}
+
+.charsheet .attributes{
+  grid-row: 2;
+  grid-column: 1;
+  display: grid;
+}
+
+.charsheet .body{
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+}
+
+.charsheet .body-top{
+  grid-row: 1;
+  display: grid;
+}
+
+.charsheet .body-bot{
+  grid-row: 2;
+
+}
+
+.charsheet .top-row{
+  display: flex;
+}
+
+.charsheet .inventory{
+  display: grid;
+}
+
+.charsheet .inventory-image{
+  grid-column: 1;
+  width: 50%;
+  height: 50%;
+}
+
+.charsheet .inventory-table{
+  grid-column: 2;
+  display: grid;
+}
+
+.charsheet .attacks{
+  grid-row: 2;
+  display: grid;
+}
+
+.charsheet .attacks-table{
+  grid-column: span 4;
+  display: grid;
+  grid-template-areas: 
+  'weapon_entry range_entry damage_entry ammunition_entry';
+}
+
+.charsheet .attacks-weapon{
+  grid-area: weapon_entry;
+}
+
+.charsheet .attacks-range{
+  grid-area: range_entry;
+}
+
+.charsheet .attacks-damage{
+  grid-area: damage_entry;
+}
+
+.charsheet .attacks-ammunition{
+  grid-area:ammunition_entry
+}
+
+
+label, h3{
+  color: peru;
+}

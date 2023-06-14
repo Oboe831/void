@@ -1,0 +1,98 @@
+<div class="overview">
+	<div class="banner">
+		<label>Player Name:</label><input type="text" name="attr_player_name" value=" " style="width: 50px;"/>
+		<label>Race:</label>
+		<select name="attr_race">
+			<option value="kevin" selected="selected">Kevin</option>
+			<option value="hart">Hart</option>
+		</select>
+		<label>Background:</label>
+		<select name="attr_background">
+			<option value="actor">Actor</option>
+			<option value="kayn" selected="selected">Kayn</option>
+		</select>
+	</div>
+	<div class="attributes">
+		<div class="attribute">
+			<input type="number" name="attr_veterancy" value="0" />
+			<label>Veterancy (VP)</label>
+		</div>
+		<div class="attribute">
+			<input type="number" name="attr_brawn" value="0" />
+			<label>Brawn</label>
+		</div>
+		<div class="attribute">
+			<input type="number" name="attr_agility" value="0" />
+			<label>Agility</label>
+		</div>
+		<div class="attribute">
+			<input type="number" name="attr_diligence" value="0" />
+			<label>Diligence</label>
+		</div>
+		<div class="attribute">
+			<input type="number" name="attr_appeal" value="0" />
+			<label>Appeal</label>
+		</div>
+		<div class="attribute">
+			<input type="number" name="attr_smarts" value="0" />
+			<label>Smarts</label>
+		</div>
+		<div class="attribute">
+			<input type="number" name="attr_spellcasting" value="0" />
+			<label>Spellcasting</label>
+		</div>
+	</div>
+
+	<div class="body">
+		<div class="body-top">
+			<div class="top-row">
+				<label>Initative<button type="roll" value="/r (@{diligence} + @{smarts})d6" name="roll_Iniative"></button></label>
+				<label><input type="number" value="30" name="attr_movement"disabled />Movement</label> 
+			</div>
+			<div class="top-row"> 
+				<label>Armour Rating <input type="number" value="10" name="attr_armour_rating"></label>
+				<label><input type="number" name="attr_energy_resistance" value="10" />Energy Resistance</label> 
+			</div>
+			<div class="top-row">
+				<label><input type="number" name="attr_hitpoints" value="20">Hit Points</label>
+			</div>
+			<div class="top-row">
+				<label><input type="number" name="attr_fate_points" value="0">Fate Points</label>
+			</div>
+		</div>
+		<div class="body-bot">
+			<div class="inventory">
+				<img class="inventory-image" src="https://i.pinimg.com/564x/bf/8c/2a/bf8c2a35473ceaf53f728f2b79f65104.jpg">
+				
+				<div class="inventory-table">				
+					<label style="grid-row: 1; grid-column: 1;">Inventory Name</label>
+					<label style="grid-row: 1; grid-column: 2;">Slot</label>
+					<label style="grid-row: 1; grid-column: 3;">Rarity</label>
+					<div style="grid-row: 2; grid-column: 1/span 3;">
+						<fieldset class="repeating_attacks" style="justify-content: center;">
+							<input type="text" name="attr_inventory_name" style="width: 50px;"/>
+							<input type="number" name="attr_slot"/>
+							<input type="text" name="attr_rarity" style="width: 100px;"/>
+						</fieldset>
+					</div>
+
+				</div>
+			</div>
+			<div class="attacks">
+				<h3 style="grid-row: 1; grid-column: span4;">Attacks</h3>
+				<label style="grid-row: 2; grid-column: 1;">Weapon</label>
+				<label style="grid-row: 2; grid-column: 2;">Range</label>
+				<label style="grid-row: 2; grid-column: 3;">Damage</label>
+				<label style="grid-row: 2; grid-column: 4;">Ammunition</label>
+				<div class="attacks-table">
+					<fieldset class="repeating_weapons">
+						<input type="text" name="attr_weapon_name" class="attacks-weapon">
+						<input type="text" name="attr_weapon_range" class="attacks-range">
+						<input type="text" name="attr_weapon_damage" class="attacks-damage">
+						<input type="number" name="attr_weapon_ammunition" class="attacks-ammunition">
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
