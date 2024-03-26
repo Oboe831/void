@@ -1,11 +1,28 @@
+.charsheet .sheet-attributes,
+.charsheet .sheet-attacks,
+.charsheet .sheet-inventory{
+  display: none;
+}
+
+.charsheet .sheet-tabstoggle[value="attributes"] ~ div.sheet-attributes,
+.charsheet .sheet-tabstoggle[value="attacks"] ~ div.sheet-attacks,
+.charsheet .sheet-tabstoggle[value="inventory"] ~ div.sheet-inventory{
+  display:block;
+}
+
+
 .charsheet .overview{
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: auto;
-  background-image: url(https://i.pinimg.com/564x/9d/95/67/9d9567025f4ed4264fe6cac9229a6c51.jpg);
+  width: 720px;
+  height: 1280px;
+  display: flex;
+  flex-direction: column;
   background-repeat:space;
   background-color: black;
-  background-position: center;
+  background-image: url("https://i.pinimg.com/564x/2c/e2/78/2ce278f6355d6a0146d7610bddacb342.jpg");
+  background-size: 100%;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  
 }
 
 .charsheet .banner{
@@ -13,36 +30,79 @@
   color: gainsboro;
   grid-row: 1;
   grid-column: span 2;
+  border: 1px blueviolet solid;
 }
+.charsheet .inventory{
+  display: flex;
+}
+
 
 .charsheet .attributes{
   grid-row: 2;
   grid-column: 1;
   display: grid;
+  border: 1px brown solid;
+}
+.charsheet .attributes-main{
+  display: grid;
+  grid-area: auto;
+  grid-template-areas:
+  "bad ass";
+}
+
+.charsheet .attribute{
+  border: 1px crimson solid;
+  display: grid;
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.charsheet .skills{
+  display: flex;
+  flex-direction: column;
+}
+
+.charsheet .bad{
+  grid-area: "bad";
+  display: flex;
+  flex-direction: column;
+  border: 1px yellow solid;
+}
+
+.charsheet .ass{
+  grid-area: "ass";
+  display: flex;
+  flex-direction: column;
+  border: 1px yellowgreen solid;
 }
 
 .charsheet .body{
   grid-column: 2;
   grid-row: 2;
   display: grid;
+  grid-area: auto;
+  border: 1px green solid;
 }
 
 .charsheet .body-top{
   grid-row: 1;
   display: grid;
+  border: 1px yellow solid;
 }
 
 .charsheet .body-bot{
   grid-row: 2;
-
+  border: 1px pink solid;
 }
 
 .charsheet .top-row{
   display: flex;
+  border: 1px silver dashed;
 }
 
 .charsheet .inventory{
   display: grid;
+  border: 1px red solid;
 }
 
 .charsheet .inventory-image{
@@ -54,37 +114,67 @@
 .charsheet .inventory-table{
   grid-column: 2;
   display: grid;
+  border: 1px peru solid;
 }
 
 .charsheet .attacks{
-  grid-row: 2;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  border: 1px olive dashed;
 }
 
-.charsheet .attacks-table{
-  grid-column: span 4;
+
+.charsheet .repcontainer[data-groupname=repeating_weapons]>div,
+.charsheet .attacks-table-header{
   display: grid;
+
   grid-template-areas: 
-  'weapon_entry range_entry damage_entry ammunition_entry';
+  "weapon range damage ammunition";
+  border: 1px wheat solid;
+}
+
+.charsheet .weapon-header{
+  grid-area: weapon;
+  text-align: left;
+}
+
+.charsheet .range-header{
+  grid-area: range;
+  padding-right: 2px;
+  text-align: center;
+}
+
+.charsheet .damage-header{
+  grid-area: damage;
+  padding-left: 26px;
+  text-align: center;
+}
+
+.charsheet .ammunition-header{
+  grid-area: ammunition;
+  text-align: right;
 }
 
 .charsheet .attacks-weapon{
-  grid-area: weapon_entry;
+  grid-area: weapon;
+  width: 75%;
 }
 
 .charsheet .attacks-range{
-  grid-area: range_entry;
+  grid-area: range;
+  width: 50%;
 }
 
 .charsheet .attacks-damage{
-  grid-area: damage_entry;
+  grid-area: damage;
+  width: 50%;
 }
 
 .charsheet .attacks-ammunition{
-  grid-area:ammunition_entry
+  grid-area: ammunition;
+  width: 50%;
 }
 
-
-label, h3{
+label, h3, h2{
   color: peru;
 }
