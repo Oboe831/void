@@ -35,56 +35,73 @@
 		<button type="action" name="act_inventory">Gear</button>
 		<button type="action" name="act_attacks">Attacks</button>
 	</div>
-	<div class="attributes">
+	<div class="sheet-attributes">
 		<div class="attributes-main">
 			<div class="bad">
 				<div class="attribute">
 					<h2>Brawn: <input type="number" name="attr_brawn" value="0" /></h2>
 					<div class="skills">
 						<!--fuck js-->
-						<label>Climbing <input type="checkbox" name="attr_climbing_rank_1"> <input type="checkbox" name="attr_climbing_rank_2"> <input type="hidden" name="attr_climbing_mod" value="0"> <button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+@{brawn}+@{climbing_mod})d6>?{Target DC|2}"></button></label>
-						<label>Endurance <input type="checkbox" name="attr_endurance_rank_1"> <input type="checkbox" name="attr_endurance _rank_2"> <input type="hidden" name="attr_endurance_mod" value="0"> <button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+@{brawn}+@{endurance_mod})d6>?{Target DC|2}"></button></label>
-						<label>Wrestling <input type="checkbox" name="attr_wrestling_rank_1"> <input type="checkbox" name="attr_wrestling_rank_2"> <input type="hidden" name="attr_wrestling_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+@{brawn}+@{wrestling_mod})d6>?{Target DC|2}"></button> </label>
-						<label>Heavy Weapons <input type="checkbox" name="attr_heavy_weapons_rank_1"> <input type="checkbox" name="attr_heavy_weapons_rank_2"><input type="hidden" name="attr_heavy_weapons_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+@{brawn}+@{heavy_weapons_mod})d6>?{Target DC|2}"></button></label>
-						<label>Melee Weapons <input type="checkbox" name="attr_melee_weapons_rank_1"> <input type="checkbox" name="attr_melee_weapons_rank_2"><input type="hidden" name="attr_melee_weapons_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+@{brawn}+@{melee_weapons_mod})d6>?{Target DC|2}"></button> </label>
-						<label>Jumping <input type="checkbox" name="attr_jumping_rank_1"> <input type="checkbox" name="attr_jumping_rank_2"><input type="hidden" name="attr_jumping_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+@{brawn}+@{jumping_mod})d6>?{Target DC|2}"></button></label>
-						<label>Revolvers <input type="checkbox" name="attr_revolvers_rank_1"> <input type="checkbox" name="attr_revolvers_rank_2"><input type="hidden" name="attr_revolvers_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+@{brawn}+@{revolvers_mod})d6>?{Target DC|2}"></button></label>
-						<label>Strength <input type="checkbox" name="attr_strength_rank_1"> <input type="checkbox" name="attr_strength_rank_2"><input type="hidden" name="attr_strength_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+@{brawn}+@{strength_mod})d6>?{Target DC|2}"></button></label>
+						<label>Exertion <input type="checkbox" name="attr_exertion_rank_1"> <input type="checkbox" name="attr_exertion_rank_2"> <input type="hidden" name="attr_exertion_mod" value="0"> <button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{brawn}+@{exertion_mod})d6>?{Target DC|4}" name="roll_exertion" class="sheet-skill-button"></button></label>
+						<label>Endurance <input type="checkbox" name="attr_endurance_rank_1"> <input type="checkbox" name="attr_endurance _rank_2"> <input type="hidden" name="attr_endurance_mod" value="0"> <button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{brawn}+@{endurance_mod})d6>?{Target DC|4}" name="roll_endurance" class="sheet-skill-button"></button></label>
+						<label>Unarmed <input type="checkbox" name="attr_unarmed_rank_1"> <input type="checkbox" name="attr_unarmed_rank_2"> <input type="hidden" name="attr_unarmed_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{brawn}+@{unarmed_mod})d6>?{Target DC|4}" name="roll_unarmed" class="sheet-skill-button"></button> </label>
+						<label>Heavy Weapons <input type="checkbox" name="attr_heavy_weapons_rank_1"> <input type="checkbox" name="attr_heavy_weapons_rank_2"><input type="hidden" name="attr_heavy_weapons_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{brawn}+@{heavy_weapons_mod})d6>?{Target DC|4}" name="roll_heavy_weapons" class="sheet-skill-button"></button></label>
+						<label>Melee Weapons <input type="checkbox" name="attr_melee_weapons_rank_1"> <input type="checkbox" name="attr_melee_weapons_rank_2"><input type="hidden" name="attr_melee_weapons_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{brawn}+@{melee_weapons_mod})d6>?{Target DC|4}" name="roll_melee_weapons" class="sheet-skill-button"></button> </label>
+						<label>Revolvers <input type="checkbox" name="attr_revolvers_rank_1"> <input type="checkbox" name="attr_revolvers_rank_2"><input type="hidden" name="attr_revolvers_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{brawn}+@{revolvers_mod})d6>?{Target DC|4}" name="roll_revolvers" class="sheet-skill-button"></button></label>
+						<label>Strength <input type="checkbox" name="attr_strength_rank_1"> <input type="checkbox" name="attr_strength_rank_2"><input type="hidden" name="attr_strength_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{brawn}+@{strength_mod})d6>?{Target DC|4}" name="roll_strength" class="sheet-skill-button"></button></label>
+						<fieldset class="repeating_brawnSkills">
+							<label><input type="text" name="attr_brawn_skill_name" style="width: 100px;"><input type="checkbox" name="attr_brawn_skill_1"> <input type="checkbox" name="attr_brawn_skill_2"><input type="hidden" name="attr_brawn_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{brawn}+@{brawn_skill_mod})d6>?{Target DC|4}" name="roll_brawn_skill" class="sheet-skill-button"></button></label>
+						</fieldset>
 					</div>
 				</div>
 				<div class="attribute">
 					<h2>Agility: <input type="number" name="attr_agility" value="0" /></h2>
-					<label>Acrobatics <input type="checkbox" name="attr_acrobatics_rank_1"> <input type="checkbox" name="attr_acrobatics_rank_2"><input type="hidden" name="attr_acrobatics_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+@{agility}+@{acrobatics_mod})d6>?{Target DC|2}"></button></label>
-					<label>Balance <input type="checkbox" name="attr_balance_rank_1"> <input type="checkbox" name="attr_balance_rank_2"><input type="hidden" name="attr_balance_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+@{agility}+@{balance_mod})d6>?{Target DC|2}"></button></label>
-					<label>Light Pistols <input type="checkbox" name="attr_light_pistols_rank_1"> <input type="checkbox" name="attr_light_pistols_rank_2"><input type="hidden" value="0" name="attr_light_pistol_mod"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+@{agility}+@{acrobatics_mod})d6>?{Target DC|2}"></button></label>
-					<label>Revolvers <input type="checkbox" name="attr_agility_revolver_rank_1"> <input type="checkbox" name="attr_agility_revolver_rank_2"><input type="hidden" value="0" name="attr_agility_revolver_mod"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+@{agility}+@{agility_revolver_mod})d6>?{Target DC|2}"></button></label>
-					<label>Submachine Guns <input type="checkbox" name="attr_submachine_rank_1"> <input type="checkbox" name="attr_submachine_rank_2"><input type="hidden" value="0" name="attr_submachine_mod"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+@{agility}+@{submachine_mod})d6>?{Target DC|2}"></button></label>
-					<label>Light Melee Weapons <input type="checkbox" name="attr_light_melee_weapons_rank_1"> <input type="checkbox" name="attr_light_melee_weapons_rank_2" value="0"><input type="hidden" name="attr_light_melee_mod"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+@{agility}+@{light_melee_mod})d6>?{Target DC|2}"></button></label>
-					<label>Sneak <input type="checkbox" name="attr_sneak_rank_1"> <input type="checkbox" name="attr_sneak_rank_2"><input type="hidden" name="attr_sneak_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+@{agility}+@{sneak_mod})d6>?{Target DC|2}"></button></label>
-					<label>Piloting <input type="checkbox" name="attr_piloting_rank_1"> <input type="checkbox" name="attr_piloting_rank_2"><input type="hidden" name="attr_piloting_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+@{agility}+@{piloting_mod})d6>?{Target DC|2}"></button></label>
+					<label>Acrobatics <input type="checkbox" name="attr_acrobatics_rank_1"> <input type="checkbox" name="attr_acrobatics_rank_2"><input type="hidden" name="attr_acrobatics_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{agility}+@{acrobatics_mod})d6>?{Target DC|4}" name="roll_acrobatics" class="sheet-skill-button"></button></label>
+					<label>Balance <input type="checkbox" name="attr_balance_rank_1"> <input type="checkbox" name="attr_balance_rank_2"><input type="hidden" name="attr_balance_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{agility}+@{balance_mod})d6>?{Target DC|4}" name="roll_balance" class="sheet-skill-button"></button></label>
+					<label>Light Pistols <input type="checkbox" name="attr_light_pistols_rank_1"> <input type="checkbox" name="attr_light_pistols_rank_2"><input type="hidden" value="0" name="attr_light_pistol_mod"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{agility}+@{light_pistol_mod})d6>?{Target DC|4}" name="roll_light_pistol" class="sheet-skill-button"></button></label>
+					<label>Revolvers <input type="checkbox" name="attr_agility_revolver_rank_1"> <input type="checkbox" name="attr_agility_revolver_rank_2"><input type="hidden" value="0" name="attr_agility_revolver_mod"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{agility}+@{agility_revolver_mod})d6>?{Target DC|4}" name="roll_agility_revolver" class="sheet-skill-button"></button></label>
+					<label>Submachine Guns <input type="checkbox" name="attr_submachine_rank_1"> <input type="checkbox" name="attr_submachine_rank_2"><input type="hidden" value="0" name="attr_submachine_mod"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{agility}+@{submachine_mod})d6>?{Target DC|4}" name="roll_submachine" class="sheet-skill-button"></button></label>
+					<label>Light Melee Weapons <input type="checkbox" name="attr_light_melee_weapons_rank_1"> <input type="checkbox" name="attr_light_melee_weapons_rank_2" value="0"><input type="hidden" name="attr_light_melee_mod"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{agility}+@{light_melee_mod})d6>?{Target DC|4}" name="roll_light_melee" class="sheet-skill-button"></button></label>
+					<label>Sneak <input type="checkbox" name="attr_sneak_rank_1"> <input type="checkbox" name="attr_sneak_rank_2"><input type="hidden" name="attr_sneak_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{agility}+@{sneak_mod})d6>?{Target DC|4}" name="roll_sneak" class="sheet-skill-button"></button></label>
+					<label>Piloting <input type="checkbox" name="attr_piloting_rank_1"> <input type="checkbox" name="attr_piloting_rank_2"><input type="hidden" name="attr_piloting_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{agility}+@{piloting_mod})d6>?{Target DC|4}" name="roll_piloting" class="sheet-skill-button"></button></label>
+					<fieldset class="repeating_agilitySkills">
+						<label><input type="text" name="attr_agility_skill_name" style="width: 100px;"><input type="checkbox" name="attr_agility_skill_1"> <input type="checkbox" name="attr_agility_skill_2"><input type="hidden" name="attr_agility_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{agility}+@{agility_skill_mod})d6>?{Target DC|4}" name="roll_agility_skill" class="sheet-skill-button"></button></label>
+					</fieldset>
 				</div>
 				<div class="attribute">
 					<h2>Diligence: <input type="number" name="attr_diligence" value="0" /></h2>
-					<label>Perception <input type="checkbox" name="attr_perception_rank_1"> <input type="checkbox" name="attr_perception_rank_2"><input type="hidden" name="attr_perception_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+@{diligence}+@{perception_mod})d6>?{Target DC|2}"></button></label>
-					<label>First Aid <input type="checkbox" name="attr_first_aid_rank_1"> <input type="checkbox" name="attr_first_aid_rank_2"><input type="hidden" name="attr_first_aid_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+@{diligence}+@{first_aid_mod})d6>?{Target DC|2}"></button></label>
-					<label>Insight <input type="checkbox" name="attr_insight_rank_1"> <input type="checkbox" name="attr_insight_rank_2"><input type="hidden" name="attr_insight_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+@{diligence}+@{insight_mod})d6>?{Target DC|2}"></button></label>
-					<label>Tracking <input type="checkbox" name="attr_tracking_rank_1"> <input type="checkbox" name="attr_tracking_rank_2"><input type="hidden" name="attr_tracking_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+@{diligence}+@{tracking_mod})d6>?{Target DC|2}"></button></label>
-					<label>Arcana <input type="checkbox" name="attr_arcana_rank_1"> <input type="checkbox" name="attr_arcana_rank_2"><input type="hidden" name="attr_arcana_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+@{diligence}+@{arcana_mod})d6>?{Target DC|2}"></button></label>
-					<label>Piloting <input type="checkbox" name="attr_diligence_piloting_rank_1"> <input type="checkbox" name="attr_diligence_piloting_rank_2"><input type="hidden" value="0" name="attr_diligence_piloting_mod"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+@{diligence}+@{diligence_piloting_mod})d6>?{Target DC|2}"></button></label>
-					<label>Smart Weapons <input type="checkbox" name="attr_smart_weapons_rank_1"> <input type="checkbox" name="attr_smart_weapons_rank_2"><input type="hidden" value="0" name="attr_smart_weapons_mod"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+@{diligence}+@{smart_weapons_mod})d6>?{Target DC|2}"></button></label>
+					<label>Perception <input type="checkbox" name="attr_perception_rank_1"> <input type="checkbox" name="attr_perception_rank_2"><input type="hidden" name="attr_perception_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{diligence}+@{perception_mod})d6>?{Target DC|4}" name="roll_perception" class="sheet-skill-button"></button></label>
+					<label>First Aid <input type="checkbox" name="attr_first_aid_rank_1"> <input type="checkbox" name="attr_first_aid_rank_2"><input type="hidden" name="attr_first_aid_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{diligence}+@{first_aid_mod})d6>?{Target DC|4}" name="roll_first_aid" class="sheet-skill-button"></button></label>
+					<label>Insight <input type="checkbox" name="attr_insight_rank_1"> <input type="checkbox" name="attr_insight_rank_2"><input type="hidden" name="attr_insight_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{diligence}+@{insight_mod})d6>?{Target DC|4}" name="roll_insight" class="sheet-skill-button"></button></label>
+					<label>Tracking <input type="checkbox" name="attr_tracking_rank_1"> <input type="checkbox" name="attr_tracking_rank_2"><input type="hidden" name="attr_tracking_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{diligence}+@{tracking_mod})d6>?{Target DC|4}" name="roll_tracking" class="sheet-skill-button"></button></label>
+					<label>Arcana <input type="checkbox" name="attr_arcana_rank_1"> <input type="checkbox" name="attr_arcana_rank_2"><input type="hidden" name="attr_arcana_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{diligence}+@{arcana_mod})d6>?{Target DC|4}" name="roll_arcana" class="sheet-skill-button"></button></label>
+					<label>Piloting <input type="checkbox" name="attr_diligence_piloting_rank_1"> <input type="checkbox" name="attr_diligence_piloting_rank_2"><input type="hidden" value="0" name="attr_diligence_piloting_mod"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{diligence}+@{diligence_piloting_mod})d6>?{Target DC|4}" name="roll_piloting" class="sheet-skill-button"></button></label>
+					<label>Smart Weapons <input type="checkbox" name="attr_smart_weapons_rank_1"> <input type="checkbox" name="attr_smart_weapons_rank_2"><input type="hidden" value="0" name="attr_smart_weapons_mod"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{diligence}+@{smart_weapons_mod})d6>?{Target DC|4}" name="roll_smart_weapons" class="sheet-skill-button"></button></label>
+					<fieldset class="repeating_diligenceSkills">
+						<label><input type="text" name="attr_diligence_skill_name" style="width: 100px;"><input type="checkbox" name="attr_diligence_skill_1"> <input type="checkbox" name="attr_diligence_skill_2"><input type="hidden" name="attr_diligence_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{diligence}+@{diligence_skill_mod})d6>?{Target DC|4}" name="roll_diligence_skill" class="sheet-skill-button"></button></label>
+					</fieldset>
 				</div>
 			</div>
 			<div class="ass">
 				<div class="attribute">
 					<h2>Appeal: <input type="number" name="attr_appeal" value="0" /></h2>
-					<label>Persuasion <input type="checkbox" name="attr_persuasion_rank_1"> <input type="checkbox" name="attr_persuasion_rank_2"></label>
-					<label>Performance <input type="checkbox" name="attr_performance_rank_1"> <input type="checkbox" name="attr_performance_rank_2"></label>
+					<label>Persuasion <input type="checkbox" name="attr_persuasion_skill_1"> <input type="checkbox" name="attr_persuasion_skill_2"><input type="hidden" name="attr_persuasion_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{appeal}+@{persuasion_skill_mod})d6>?{Target DC|4}" name="roll_persuasion_skill" class="sheet-skill-button"></button></label>
+					<label>Performance <input type="checkbox" name="attr_performance_skill_1"> <input type="checkbox" name="attr_performance_skill_2"><input type="hidden" name="attr_performance_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{appeal}+@{performance_skill_mod})d6>?{Target DC|4}" name="roll_performance_skill" class="sheet-skill-button"></button></label>
+					<fieldset class="repeating_appealSkills">
+						<label><input type="text" name="attr_appeal_skill_name" style="width: 100px;"><input type="checkbox" name="attr_appeal_skill_1"> <input type="checkbox" name="attr_appeal_skill_2"><input type="hidden" name="attr_appeal_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{appeal}+@{appeal_skill_mod})d6>?{Target DC|4}" name="roll_appeal_skill" class="sheet-skill-button"></button></label>
+					</fieldset>
 				</div>
 				<div class="attribute">	
 					<h2>Smarts: <input type="number" name="attr_smarts" value="0" /></h2>
+					<fieldset class="repeating_smartsSkills">
+						<label><input type="text" name="attr_smarts_skill_name" style="width: 100px;"><input type="checkbox" name="attr_smarts_skill_1"> <input type="checkbox" name="attr_smarts_skill_2"><input type="hidden" name="attr_smarts_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{smarts}+@{smarts_skill_mod})d6>?{Target DC|4}" name="roll_smarts_skill" class="sheet-skill-button"></button></label>
+					</fieldset>
 				</div>
 				<div class="attribute">
 					<h2>Spellcasting: <input type="number" name="attr_spellcasting" value="0" /></h2>
+					<fieldset class="repeating_spellcastingSkills">
+						<label><input type="text" name="attr_spellcasting_skill_name" style="width: 100px;"><input type="checkbox" name="attr_spellcasting_skill_1"> <input type="checkbox" name="attr_spellcasting_skill_2"><input type="hidden" name="attr_spellcasting_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{spellcasting}+@{spellcasting_skill_mod})d6>?{Target DC|4}" name="roll_spellcasting_skill" class="sheet-skill-button"></button></label>
+					</fieldset>
 				</div>
 			</div>
 			
@@ -165,10 +182,387 @@
     });
 </script>
 
-<!--script to adjust climbing_skill based off on trained checkbox  Did I mention fuck js?-->
+<!--REPEATING SKILL SECTIONS-->
+
+<!--script to adjust brawn_skill_1 modifiers-->
 <script type="text/worker">
-	const checkboxList = ["climbing_rank_1", "climbing_rank_2"];
-	const hiddenField = "climbing_mod";
+	on("change:repeating_brawnSkills:brawn_skill_1", function(eventInfo){
+		console.log("bugger");
+		let fullId = eventInfo.sourceAttribute.replace("repeating_brawnSkills_", "");
+		const rowId = fullId.split("_");
+		console.log(rowId[2]);
+		getAttrs([
+			"repeating_brawnSkills_brawn_skill_1",
+			"repeating_brawnSkills_brawn_skill_mod"
+		], function(values){
+			let newValue = parseInt(values.repeating_brawnSkills_brawn_skill_mod);
+
+			console.log(newValue);
+			if(values.repeating_brawnSkills_brawn_skill_1 === 'on'){
+				newValue += 2;
+				console.log(newValue);
+			}else{
+				newValue -= 2;
+				console.log(newValue);
+			}
+
+			console.log(`repeating_brawnSkills_${rowId[2]}_brawn_skill_mod`);
+			setAttrs({
+				[`repeating_brawnSkills_${rowId[2]}_brawn_skill_mod`]: newValue
+				
+			});
+		});
+	});
+</script>
+
+<!--script to adjust brawn_skill_2 modifiers-->
+<script type="text/worker">
+	on("change:repeating_brawnSkills:brawn_skill_2", function(eventInfo){
+		console.log("bugger");
+		let fullId = eventInfo.sourceAttribute.replace("repeating_brawnSkills_", "");
+		const rowId = fullId.split("_");
+		console.log(rowId[2]);
+		getAttrs([
+			"repeating_brawnSkills_brawn_skill_2",
+			"repeating_brawnSkills_brawn_skill_mod"
+		], function(values){
+			let newValue = parseInt(values.repeating_brawnSkills_brawn_skill_mod);
+
+			console.log(newValue);
+			if(values.repeating_brawnSkills_brawn_skill_2 === 'on'){
+				newValue += 2;
+				console.log(newValue);
+			}else{
+				newValue -= 2;
+				console.log(newValue);
+			}
+
+			console.log(`repeating_brawnSkills_${rowId[2]}_brawn_skill_mod`);
+			setAttrs({
+				[`repeating_brawnSkills_${rowId[2]}_brawn_skill_mod`]: newValue
+				
+			});
+		});
+	});
+</script>
+
+<!--script to adjust agility_skill_1 modifiers-->
+<script type="text/worker">
+	on("change:repeating_agilitySkills:agility_skill_1", function(eventInfo){
+		console.log("bugger");
+		let fullId = eventInfo.sourceAttribute.replace("repeating_agilitySkills_", "");
+		const rowId = fullId.split("_");
+		console.log(rowId[2]);
+		getAttrs([
+			"repeating_agilitySkills_agility_skill_1",
+			"repeating_agilitySkills_agility_skill_mod"
+		], function(values){
+			let newValue = parseInt(values.repeating_agilitySkills_agility_skill_mod);
+
+			console.log(newValue);
+			if(values.repeating_agilitySkills_agility_skill_1 === 'on'){
+				newValue += 2;
+				console.log(newValue);
+			}else{
+				newValue -= 2;
+				console.log(newValue);
+			}
+
+			console.log(`repeating_agilitySkills_${rowId[2]}_agility_skill_mod`);
+			setAttrs({
+				[`repeating_agilitySkills_${rowId[2]}_agility_skill_mod`]: newValue
+				
+			});
+		});
+	});
+</script>
+
+<!--script to adjust agility_skill_2 modifiers-->
+<script type="text/worker">
+	on("change:repeating_agilitySkills:agility_skill_2", function(eventInfo){
+		console.log("bugger");
+		let fullId = eventInfo.sourceAttribute.replace("repeating_agilitySkills_", "");
+		const rowId = fullId.split("_");
+		console.log(rowId[2]);
+		getAttrs([
+			"repeating_agilitySkills_agility_skill_2",
+			"repeating_agilitySkills_agility_skill_mod"
+		], function(values){
+			let newValue = parseInt(values.repeating_agilitySkills_agility_skill_mod);
+
+			console.log(newValue);
+			if(values.repeating_agilitySkills_agility_skill_2 === 'on'){
+				newValue += 2;
+				console.log(newValue);
+			}else{
+				newValue -= 2;
+				console.log(newValue);
+			}
+
+			console.log(`repeating_agilitySkills_${rowId[2]}_agility_skill_mod`);
+			setAttrs({
+				[`repeating_agilitySkills_${rowId[2]}_agility_skill_mod`]: newValue
+				
+			});
+		});
+	});
+</script>
+
+<!--script to adjust diligence_skill_1 modifiers-->
+<script type="text/worker">
+	on("change:repeating_diligenceSkills:diligence_skill_1", function(eventInfo){
+		console.log("bugger");
+		let fullId = eventInfo.sourceAttribute.replace("repeating_diligenceSkills_", "");
+		const rowId = fullId.split("_");
+		console.log(rowId[2]);
+		getAttrs([
+			"repeating_diligenceSkills_diligence_skill_1",
+			"repeating_diligenceSkills_diligence_skill_mod"
+		], function(values){
+			let newValue = parseInt(values.repeating_diligenceSkills_diligence_skill_mod);
+
+			console.log(newValue);
+			if(values.repeating_diligenceSkills_diligence_skill_1 === 'on'){
+				newValue += 2;
+				console.log(newValue);
+			}else{
+				newValue -= 2;
+				console.log(newValue);
+			}
+
+			console.log(`repeating_diligenceSkills_${rowId[2]}_diligence_skill_mod`);
+			setAttrs({
+				[`repeating_diligenceSkills_${rowId[2]}_diligence_skill_mod`]: newValue
+				
+			});
+		});
+	});
+</script>
+
+<!--script to adjust diligence_skill_2 modifiers-->
+<script type="text/worker">
+	on("change:repeating_diligenceSkills:diligence_skill_2", function(eventInfo){
+		console.log("bugger");
+		let fullId = eventInfo.sourceAttribute.replace("repeating_diligenceSkills_", "");
+		const rowId = fullId.split("_");
+		console.log(rowId[2]);
+		getAttrs([
+			"repeating_diligenceSkills_diligence_skill_2",
+			"repeating_diligenceSkills_diligence_skill_mod"
+		], function(values){
+			let newValue = parseInt(values.repeating_diligenceSkills_diligence_skill_mod);
+
+			console.log(newValue);
+			if(values.repeating_diligenceSkills_diligence_skill_2 === 'on'){
+				newValue += 2;
+				console.log(newValue);
+			}else{
+				newValue -= 2;
+				console.log(newValue);
+			}
+
+			console.log(`repeating_diligenceSkills_${rowId[2]}_diligence_skill_mod`);
+			setAttrs({
+				[`repeating_diligenceSkills_${rowId[2]}_diligence_skill_mod`]: newValue
+				
+			});
+		});
+	});
+</script>
+
+<!--script to adjust appeal_skill_1 modifiers-->
+<script type="text/worker">
+	on("change:repeating_appealSkills:appeal_skill_1", function(eventInfo){
+		console.log("bugger");
+		let fullId = eventInfo.sourceAttribute.replace("repeating_appealSkills_", "");
+		const rowId = fullId.split("_");
+		console.log(rowId[2]);
+		getAttrs([
+			"repeating_appealSkills_appeal_skill_1",
+			"repeating_appealSkills_appeal_skill_mod"
+		], function(values){
+			let newValue = parseInt(values.repeating_appealSkills_appeal_skill_mod);
+
+			console.log(newValue);
+			if(values.repeating_appealSkills_appeal_skill_1 === 'on'){
+				newValue += 2;
+				console.log(newValue);
+			}else{
+				newValue -= 2;
+				console.log(newValue);
+			}
+
+			console.log(`repeating_appealSkills_${rowId[2]}_appeal_skill_mod`);
+			setAttrs({
+				[`repeating_appealSkills_${rowId[2]}_appeal_skill_mod`]: newValue
+				
+			});
+		});
+	});
+</script>
+
+<!--script to adjust appeal_skill_2 modifiers-->
+<script type="text/worker">
+	on("change:repeating_appealSkills:appeal_skill_2", function(eventInfo){
+		console.log("bugger");
+		let fullId = eventInfo.sourceAttribute.replace("repeating_appealSkills_", "");
+		const rowId = fullId.split("_");
+		console.log(rowId[2]);
+		getAttrs([
+			"repeating_appealSkills_appeal_skill_2",
+			"repeating_appealSkills_appeal_skill_mod"
+		], function(values){
+			let newValue = parseInt(values.repeating_appealSkills_appeal_skill_mod);
+
+			console.log(newValue);
+			if(values.repeating_appealSkills_appeal_skill_2 === 'on'){
+				newValue += 2;
+				console.log(newValue);
+			}else{
+				newValue -= 2;
+				console.log(newValue);
+			}
+
+			console.log(`repeating_appealSkills_${rowId[2]}_appeal_skill_mod`);
+			setAttrs({
+				[`repeating_appealSkills_${rowId[2]}_appeal_skill_mod`]: newValue
+				
+			});
+		});
+	});
+</script>
+
+<!--script to adjust smarts_skill_1 modifiers-->
+<script type="text/worker">
+	on("change:repeating_smartsSkills:smarts_skill_1", function(eventInfo){
+		console.log("bugger");
+		let fullId = eventInfo.sourceAttribute.replace("repeating_smartsSkills_", "");
+		const rowId = fullId.split("_");
+		console.log(rowId[2]);
+		getAttrs([
+			"repeating_smartsSkills_smarts_skill_1",
+			"repeating_smartsSkills_smarts_skill_mod"
+		], function(values){
+			let newValue = parseInt(values.repeating_smartsSkills_smarts_skill_mod);
+
+			console.log(newValue);
+			if(values.repeating_smartsSkills_smarts_skill_1 === 'on'){
+				newValue += 2;
+				console.log(newValue);
+			}else{
+				newValue -= 2;
+				console.log(newValue);
+			}
+
+			console.log(`repeating_smartsSkills_${rowId[2]}_smarts_skill_mod`);
+			setAttrs({
+				[`repeating_smartsSkills_${rowId[2]}_smarts_skill_mod`]: newValue
+				
+			});
+		});
+	});
+</script>
+
+<!--script to adjust smarts_skill_2 modifiers-->
+<script type="text/worker">
+	on("change:repeating_smartsSkills:smarts_skill_2", function(eventInfo){
+		console.log("bugger");
+		let fullId = eventInfo.sourceAttribute.replace("repeating_smartsSkills_", "");
+		const rowId = fullId.split("_");
+		console.log(rowId[2]);
+		getAttrs([
+			"repeating_smartsSkills_smarts_skill_2",
+			"repeating_smartsSkills_smarts_skill_mod"
+		], function(values){
+			let newValue = parseInt(values.repeating_smartsSkills_smarts_skill_mod);
+
+			console.log(newValue);
+			if(values.repeating_smartsSkills_smarts_skill_2 === 'on'){
+				newValue += 2;
+				console.log(newValue);
+			}else{
+				newValue -= 2;
+				console.log(newValue);
+			}
+
+			console.log(`repeating_smartsSkills_${rowId[2]}_smarts_skill_mod`);
+			setAttrs({
+				[`repeating_smartsSkills_${rowId[2]}_smarts_skill_mod`]: newValue
+				
+			});
+		});
+	});
+</script>
+
+<!--script to adjust spellcasting_skill_1 modifiers-->
+<script type="text/worker">
+	on("change:repeating_spellcastingSkills:spellcasting_skill_1", function(eventInfo){
+		console.log("bugger");
+		let fullId = eventInfo.sourceAttribute.replace("repeating_spellcastingSkills_", "");
+		const rowId = fullId.split("_");
+		console.log(rowId[2]);
+		getAttrs([
+			"repeating_spellcastingSkills_spellcasting_skill_1",
+			"repeating_spellcastingSkills_spellcasting_skill_mod"
+		], function(values){
+			let newValue = parseInt(values.repeating_spellcastingSkills_spellcasting_skill_mod);
+
+			console.log(newValue);
+			if(values.repeating_spellcastingSkills_spellcasting_skill_1 === 'on'){
+				newValue += 2;
+				console.log(newValue);
+			}else{
+				newValue -= 2;
+				console.log(newValue);
+			}
+
+			console.log(`repeating_spellcastingSkills_${rowId[2]}_spellcasting_skill_mod`);
+			setAttrs({
+				[`repeating_spellcastingSkills_${rowId[2]}_spellcasting_skill_mod`]: newValue
+				
+			});
+		});
+	});
+</script>
+
+<!--script to adjust spellcasting_skill_2 modifiers-->
+<script type="text/worker">
+	on("change:repeating_spellcastingSkills:spellcasting_skill_2", function(eventInfo){
+		console.log("bugger");
+		let fullId = eventInfo.sourceAttribute.replace("repeating_spellcastingSkills_", "");
+		const rowId = fullId.split("_");
+		console.log(rowId[2]);
+		getAttrs([
+			"repeating_spellcastingSkills_spellcasting_skill_2",
+			"repeating_spellcastingSkills_spellcasting_skill_mod"
+		], function(values){
+			let newValue = parseInt(values.repeating_spellcastingSkills_spellcasting_skill_mod);
+
+			console.log(newValue);
+			if(values.repeating_spellcastingSkills_spellcasting_skill_2 === 'on'){
+				newValue += 2;
+				console.log(newValue);
+			}else{
+				newValue -= 2;
+				console.log(newValue);
+			}
+
+			console.log(`repeating_spellcastingSkills_${rowId[2]}_spellcasting_skill_mod`);
+			setAttrs({
+				[`repeating_spellcastingSkills_${rowId[2]}_spellcasting_skill_mod`]: newValue
+				
+			});
+		});
+	});
+</script>
+
+<!--STANDARD SKILL SECTIONS-->
+
+<!--BRAWN-->
+<!--script to adjust exertion_skill based off on trained checkbox  Did I mention fuck js?-->
+<script type="text/worker">
+	const checkboxList = ["exertion_rank_1", "exertion_rank_2"];
+	const hiddenField = "exertion_mod";
 	console.log("cunt");
 	checkboxList.forEach(checkbox => {
 		on(`change:${checkbox}`, function() {
@@ -230,6 +624,239 @@
 	});
 	
 </script>
+
+<!--Unarmed-->
+<script type="text/worker">
+	const checkboxList = ["unarmed_rank_1", "unarmed_rank_2"];
+	const hiddenField = "unarmed_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+	
+</script>
+
+<!--Heavy Weapons-->
+<script type="text/worker">
+	const checkboxList = ["heavy_weapons_rank_1", "heavy_weapons_rank_2"];
+	const hiddenField = "heavy_weapons_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+	
+</script>
+
+<!--Melee Weapons-->
+<script type="text/worker">
+	const checkboxList = ["melee_weapons_rank_1", "melee_weapons_rank_2"];
+	const hiddenField = "melee_weapons_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+	
+</script>
+
+<!--Revolvers-->
+<script type="text/worker">
+	const checkboxList = ["revolvers_rank_1", "revolvers_rank_2"];
+	const hiddenField = "revolvers_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+	
+</script>
+
+<!--Strength-->
+<script type="text/worker">
+	const checkboxList = ["strength_rank_1", "strength_rank_2"];
+	const hiddenField = "strength_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+	
+</script>
+
+<!--Melee Weapons-->
+<script type="text/worker">
+	const checkboxList = ["melee_weapons_rank_1", "melee_weapons_rank_2"];
+	const hiddenField = "melee_weapons_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+	
+</script>
+
+<!--AGILITY-->
+<!--Acrobatics-->
+<script type="text/worker">
+	const checkboxList = ["acrobatics_rank_1", "acrobatics_rank_2"];
+	const hiddenField = "acrobatics_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+	
+</script>
+
 <!--script to change attributes of races on the sheet, if Jooooooh adds more might can it and have people go manual-->
 <script type="text/worker">
 	let race_modifiers = {

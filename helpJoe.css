@@ -11,12 +11,32 @@
 }
 
 
+.charsheet button[type=roll].sheet-skill-button:before{
+  content: ' ';
+}
+
+.charsheet button[type=roll].sheet-skill-button:hover{
+  background-position: 0;
+}
+
+.charsheet button[type=roll].sheet-skill-button{
+  background-image: url("https://raw.githubusercontent.com/Oboe831/void/main/Designer%20(2).png");
+  background-size: 26px 26px;
+  background-repeat: no-repeat;
+  width: 26px;
+  height: 26px;
+  border-style: none;
+  background-color: transparent;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
 .charsheet .overview{
-  width: 720px;
-  height: 1280px;
+  min-width: 720px;
+  min-height: 1280px;
   display: flex;
   flex-direction: column;
-  background-repeat:space;
+  background-repeat:repeat-y;
   background-color: black;
   background-image: url("https://i.pinimg.com/564x/2c/e2/78/2ce278f6355d6a0146d7610bddacb342.jpg");
   background-size: 100%;
