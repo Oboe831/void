@@ -19,12 +19,9 @@
 		<div>
 			<label>Veterancy (VP): <input type="number" name="attr_veterancy" value="0" /></label>
 			<label>Background:
-				<select name="attr_background">
-					<option value="actor">Actor</option>
-					<option value="kayn" selected="selected">Kayn</option>
-				</select>
+				<input type="text" name="attr_background">
 			</label>
-			
+			<label>Fate Points: <input type="number" name="attr_fate_points" value="0"></label>
 		</div>
 		
 	</div>
@@ -87,18 +84,41 @@
 					<h2>Appeal: <input type="number" name="attr_appeal" value="0" /></h2>
 					<label>Persuasion <input type="checkbox" name="attr_persuasion_skill_1"> <input type="checkbox" name="attr_persuasion_skill_2"><input type="hidden" name="attr_persuasion_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{appeal}+@{persuasion_skill_mod})d6>?{Target DC|4}" name="roll_persuasion_skill" class="sheet-skill-button"></button></label>
 					<label>Performance <input type="checkbox" name="attr_performance_skill_1"> <input type="checkbox" name="attr_performance_skill_2"><input type="hidden" name="attr_performance_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{appeal}+@{performance_skill_mod})d6>?{Target DC|4}" name="roll_performance_skill" class="sheet-skill-button"></button></label>
+					<label>Intimidation <input type="checkbox" name="attr_intimidation_skill_1"> <input type="checkbox" name="attr_intimidation_skill_2"><input type="hidden" name="attr_intimidation_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{appeal}+@{intimidation_skill_mod})d6>?{Target DC|4}" name="roll_intimidation_skill" class="sheet-skill-button"></button></label>
+					<label>Deception <input type="checkbox" name="attr_deception_skill_1"> <input type="checkbox" name="attr_deception_skill_2"><input type="hidden" name="attr_deception_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{appeal}+@{deception_skill_mod})d6>?{Target DC|4}" name="roll_deception_skill" class="sheet-skill-button"></button></label>
+					<label>Seduction <input type="checkbox" name="attr_seduction_skill_1"> <input type="checkbox" name="attr_seduction_skill_2"><input type="hidden" name="attr_seduction_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{appeal}+@{seduction_skill_mod})d6>?{Target DC|4}" name="roll_seduction_skill" class="sheet-skill-button"></button></label>
+					<label>Barter <input type="checkbox" name="attr_barter_skill_1"> <input type="checkbox" name="attr_barter_skill_2"><input type="hidden" name="attr_barter_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{appeal}+@{barter_skill_mod})d6>?{Target DC|4}" name="roll_barter_skill" class="sheet-skill-button"></button></label>
+					<label>Diplomacy <input type="checkbox" name="attr_diplomacy_skill_1"> <input type="checkbox" name="attr_diplomacy_skill_2"><input type="hidden" name="attr_diplomacy_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{appeal}+@{diplomacy_skill_mod})d6>?{Target DC|4}" name="roll_diplomacy_skill" class="sheet-skill-button"></button></label>
 					<fieldset class="repeating_appealSkills">
 						<label><input type="text" name="attr_appeal_skill_name" style="width: 100px;"><input type="checkbox" name="attr_appeal_skill_1"> <input type="checkbox" name="attr_appeal_skill_2"><input type="hidden" name="attr_appeal_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{appeal}+@{appeal_skill_mod})d6>?{Target DC|4}" name="roll_appeal_skill" class="sheet-skill-button"></button></label>
 					</fieldset>
 				</div>
 				<div class="attribute">	
 					<h2>Smarts: <input type="number" name="attr_smarts" value="0" /></h2>
+					<label>Medicine <input type="checkbox" name="attr_medicine_skill_1"> <input type="checkbox" name="attr_medicine_skill_2"><input type="hidden" name="attr_medicine_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{smarts}+@{medicine_skill_mod})d6>?{Target DC|4}" name="roll_medicine_skill" class="sheet-skill-button"></button></label>
+					<label>Chemistry <input type="checkbox" name="attr_chemistry_skill_1"> <input type="checkbox" name="attr_chemistry_skill_2"><input type="hidden" name="attr_chemistry_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{smarts}+@{chemistry_skill_mod})d6>?{Target DC|4}" name="roll_chemistry_skill" class="sheet-skill-button"></button></label>
+					<label>Engineering <input type="checkbox" name="attr_engineering_skill_1"> <input type="checkbox" name="attr_engineering_skill_2"><input type="hidden" name="attr_engineering_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{smarts}+@{engineering_skill_mod})d6>?{Target DC|4}" name="roll_engineering_skill" class="sheet-skill-button"></button></label>
+					<label>Smart Weapons <input type="checkbox" name="attr_smart_weapons_skill_1"> <input type="checkbox" name="attr_smart_weapons_skill_2"><input type="hidden" name="attr_smart_weapons_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{smarts}+@{smart_weapons_skill_mod})d6>?{Target DC|4}" name="roll_smart_weapons_skill" class="sheet-skill-button"></button></label>
+					<label>Computer Use <input type="checkbox" name="attr_computer_use_skill_1"> <input type="checkbox" name="attr_computer_use_skill_2"><input type="hidden" name="attr_computer_use_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{smarts}+@{computer_use_skill_mod})d6>?{Target DC|4}" name="roll_computer_use_skill" class="sheet-skill-button"></button></label>
+					<label>Knowledge <input type="checkbox" name="attr_knowledge_skill_1"> <input type="checkbox" name="attr_knowledge_skill_2"><input type="hidden" name="attr_knowledge_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{smarts}+@{knowledge_skill_mod})d6>?{Target DC|4}" name="roll_knowledge_skill" class="sheet-skill-button"></button></label>
+					<label>Archeology <input type="checkbox" name="attr_archeology_skill_1"> <input type="checkbox" name="attr_archeology_skill_2"><input type="hidden" name="attr_archeology_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{smarts}+@{archeology_skill_mod})d6>?{Target DC|4}" name="roll_archeology_skill" class="sheet-skill-button"></button></label>
 					<fieldset class="repeating_smartsSkills">
 						<label><input type="text" name="attr_smarts_skill_name" style="width: 100px;"><input type="checkbox" name="attr_smarts_skill_1"> <input type="checkbox" name="attr_smarts_skill_2"><input type="hidden" name="attr_smarts_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{smarts}+@{smarts_skill_mod})d6>?{Target DC|4}" name="roll_smarts_skill" class="sheet-skill-button"></button></label>
 					</fieldset>
 				</div>
 				<div class="attribute">
 					<h2>Spellcasting: <input type="number" name="attr_spellcasting" value="0" /></h2>
+					<label>Fortune <input type="checkbox" name="attr_fortune_skill_1"> <input type="checkbox" name="attr_fortune_skill_2"><input type="hidden" name="attr_fortune_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{spellcasting}+@{fortune_skill_mod})d6>?{Target DC|4}" name="roll_fortune_skill" class="sheet-skill-button"></button></label>
+					<label>Aggression <input type="checkbox" name="attr_aggression_skill_1"> <input type="checkbox" name="attr_aggression_skill_2"><input type="hidden" name="attr_aggression_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{spellcasting}+@{aggression_skill_mod})d6>?{Target DC|4}" name="roll_aggression_skill" class="sheet-skill-button"></button></label>
+					<label>Inquisitorial <input type="checkbox" name="attr_inquisitorial_skill_1"> <input type="checkbox" name="attr_inquisitorial_skill_2"><input type="hidden" name="attr_inquisitorial_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{spellcasting}+@{inquisitorial_skill_mod})d6>?{Target DC|4}" name="roll_inquisitorial_skill" class="sheet-skill-button"></button></label>
+					<label>Vanguard <input type="checkbox" name="attr_vanguard_skill_1"> <input type="checkbox" name="attr_vanguard_skill_2"><input type="hidden" name="attr_vanguard_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{spellcasting}+@{vanguard_skill_mod})d6>?{Target DC|4}" name="roll_vanguard_skill" class="sheet-skill-button"></button></label>
+					<label>Seeker <input type="checkbox" name="attr_seeker_skill_1"> <input type="checkbox" name="attr_seeker_skill_2"><input type="hidden" name="attr_seeker_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{spellcasting}+@{seeker_skill_mod})d6>?{Target DC|4}" name="roll_seeker_skill" class="sheet-skill-button"></button></label>
+					<label>Seismic <input type="checkbox" name="attr_seismic_skill_1"> <input type="checkbox" name="attr_seismic_skill_2"><input type="hidden" name="attr_seismic_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{spellcasting}+@{seismic_skill_mod})d6>?{Target DC|4}" name="roll_seismic_skill" class="sheet-skill-button"></button></label>
+					<label>Domination <input type="checkbox" name="attr_domination_skill_1"> <input type="checkbox" name="attr_domination_skill_2"><input type="hidden" name="attr_domination_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{spellcasting}+@{domination_skill_mod})d6>?{Target DC|4}" name="roll_domination_skill" class="sheet-skill-button"></button></label>
+					<label>Enhancement <input type="checkbox" name="attr_enhancement_skill_1"> <input type="checkbox" name="attr_enhancement_skill_2"><input type="hidden" name="attr_enhancement_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{spellcasting}+@{enhancement_skill_mod})d6>?{Target DC|4}" name="roll_enhancement_skill" class="sheet-skill-button"></button></label>
+					<label>Reaver <input type="checkbox" name="attr_reaver_skill_1"> <input type="checkbox" name="attr_reaver_skill_2"><input type="hidden" name="attr_reaver_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{spellcasting}+@{revear_skill_mod})d6>?{Target DC|4}" name="roll_reaver_skill" class="sheet-skill-button"></button></label>
+					<label>Kinetic <input type="checkbox" name="attr_kinetic_skill_1"> <input type="checkbox" name="attr_kinetic_skill_2"><input type="hidden" name="attr_kinetic_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{spellcasting}+@{kinetic_skill_mod})d6>?{Target DC|4}" name="roll_kinetic_skill" class="sheet-skill-button"></button></label>
+					<label>Arcana <input type="checkbox" name="attr_arcana_skill_1"> <input type="checkbox" name="attr_arcana_skill_2"><input type="hidden" name="attr_arcana_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{spellcasting}+@{arcana_skill_mod})d6>?{Target DC|4}" name="roll_arcana_skill" class="sheet-skill-button"></button></label>
 					<fieldset class="repeating_spellcastingSkills">
 						<label><input type="text" name="attr_spellcasting_skill_name" style="width: 100px;"><input type="checkbox" name="attr_spellcasting_skill_1"> <input type="checkbox" name="attr_spellcasting_skill_2"><input type="hidden" name="attr_spellcasting_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{spellcasting}+@{spellcasting_skill_mod})d6>?{Target DC|4}" name="roll_spellcasting_skill" class="sheet-skill-button"></button></label>
 					</fieldset>
@@ -139,7 +159,7 @@
 	</div>
 	<div class="sheet-attacks">
 		<div class="top-row">
-			<label>Initative<button type="roll" value="/r (@{diligence} + @{smarts})d6" name="roll_Iniative"></button></label>
+			<label>Initative<button type="roll" value="/r 3d6 + @{diligence} + @{smarts}" name="roll_Iniative"></button></label>
 			<label>Movement:<input type="number" value="0" name="attr_movement" /></label> 
 		</div>
 		<div class="top-row"> 
@@ -147,8 +167,7 @@
 			<label>Energy Resistance: <input type="number" name="attr_energy_resistance" value="10" /></label> 
 		</div>
 		<div class="top-row">
-			<label>Hit Points: <input type="number" name="attr_hitpoints" value="20"></label>
-			<label>Fate Points: <input type="number" name="attr_fate_points" value="0"></label>
+			<label>Hit Points: <input type="number" name="attr_hitpoints" value="0"></label>
 		</div>
 		<div class="attacks">
 			<div style="grid-row: 1; grid-column: span 4; text-align: center;"><h3>Attacks</h3></div>
@@ -856,6 +875,139 @@
 	});
 	
 </script>
+
+<!--Balance-->
+<script type="text/worker">
+	const checkboxList = ["balance_rank_1", "balance_rank_2"];
+	const hiddenField = "balance_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+	
+</script>
+
+<!--Light Pistol-->
+<script type="text/worker">
+	const checkboxList = ["light_pistol_rank_1", "light_pistol_rank_2"];
+	const hiddenField = "light_pistol_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+	
+</script>
+
+<!--Agility Revolvers-->
+<script type="text/worker">
+	const checkboxList = ["agility_revolver_rank_1", "agility_revolver_rank_2"];
+	const hiddenField = "agility_revolver_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+	
+</script>
+
+<!--Light Pistol-->
+<script type="text/worker">
+	const checkboxList = ["light_pistol_rank_1", "light_pistol_rank_2"];
+	const hiddenField = "light_pistol_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+	
+</script>
+
 
 <!--script to change attributes of races on the sheet, if Jooooooh adds more might can it and have people go manual-->
 <script type="text/worker">
