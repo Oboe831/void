@@ -47,6 +47,7 @@
 
 .charsheet .banner{
   display: flex;
+  padding: 10px;
   color: gainsboro;
   grid-row: 1;
   grid-column: span 2;

@@ -1,9 +1,9 @@
 <div class="overview">
 	<div class="banner">
 		<div>
-			<label>Player Name:<input type="text" name="attr_player_name" value=" " style="width: 50px;"/></label>
+			<label>Player Name:<input type="text" name="attr_player_name" value=" " style="width: 75px;"/></label>
 			<label>Race:
-				<select name="attr_race">
+				<select name="attr_race" style="width: auto;">
 					<option value="Human">Human</option>
 					<option value="Dwarf">Dwarf</option>
 					<option value="Elf">Elf</option>
@@ -16,12 +16,16 @@
 				</select>
 			</label>
 		</div>
-		<div>
+		<div style=" display: flex; flex-direction: column; justify-content: center;">
 			<label>Veterancy (VP): <input type="number" name="attr_veterancy" value="0" /></label>
 			<label>Background:
-				<input type="text" name="attr_background">
+				<input type="text" name="attr_background" style="width: 100px;">
 			</label>
+			
+		</div>
+		<div style="justify-content: center;">
 			<label>Fate Points: <input type="number" name="attr_fate_points" value="0"></label>
+			<label>Vows: <input type="number" name="attr_vows" value="0"></label>
 		</div>
 		
 	</div>
@@ -98,7 +102,7 @@
 					<label>Medicine <input type="checkbox" name="attr_medicine_skill_1"> <input type="checkbox" name="attr_medicine_skill_2"><input type="hidden" name="attr_medicine_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{smarts}+@{medicine_skill_mod})d6>?{Target DC|4}" name="roll_medicine_skill" class="sheet-skill-button"></button></label>
 					<label>Chemistry <input type="checkbox" name="attr_chemistry_skill_1"> <input type="checkbox" name="attr_chemistry_skill_2"><input type="hidden" name="attr_chemistry_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{smarts}+@{chemistry_skill_mod})d6>?{Target DC|4}" name="roll_chemistry_skill" class="sheet-skill-button"></button></label>
 					<label>Engineering <input type="checkbox" name="attr_engineering_skill_1"> <input type="checkbox" name="attr_engineering_skill_2"><input type="hidden" name="attr_engineering_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{smarts}+@{engineering_skill_mod})d6>?{Target DC|4}" name="roll_engineering_skill" class="sheet-skill-button"></button></label>
-					<label>Smart Weapons <input type="checkbox" name="attr_smart_weapons_skill_1"> <input type="checkbox" name="attr_smart_weapons_skill_2"><input type="hidden" name="attr_smart_weapons_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{smarts}+@{smart_weapons_skill_mod})d6>?{Target DC|4}" name="roll_smart_weapons_skill" class="sheet-skill-button"></button></label>
+					<label>Smart Weapons <input type="checkbox" name="attr_smart_smart_weapons_skill_1"> <input type="checkbox" name="attr_smart_smart_weapons_skill_2"><input type="hidden" name="attr_smart_smart_weapons_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{smarts}+@{smart_smart_weapons_skill_mod})d6>?{Target DC|4}" name="roll_smart_smart_weapons_skill" class="sheet-skill-button"></button></label>
 					<label>Computer Use <input type="checkbox" name="attr_computer_use_skill_1"> <input type="checkbox" name="attr_computer_use_skill_2"><input type="hidden" name="attr_computer_use_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{smarts}+@{computer_use_skill_mod})d6>?{Target DC|4}" name="roll_computer_use_skill" class="sheet-skill-button"></button></label>
 					<label>Knowledge <input type="checkbox" name="attr_knowledge_skill_1"> <input type="checkbox" name="attr_knowledge_skill_2"><input type="hidden" name="attr_knowledge_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{smarts}+@{knowledge_skill_mod})d6>?{Target DC|4}" name="roll_knowledge_skill" class="sheet-skill-button"></button></label>
 					<label>Archeology <input type="checkbox" name="attr_archeology_skill_1"> <input type="checkbox" name="attr_archeology_skill_2"><input type="hidden" name="attr_archeology_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{smarts}+@{archeology_skill_mod})d6>?{Target DC|4}" name="roll_archeology_skill" class="sheet-skill-button"></button></label>
@@ -125,16 +129,6 @@
 				</div>
 			</div>
 			
-		</div>
-	
-		<div class="body">
-			<div class="body-top">
-				<label>dummy</label>
-			</div>
-			<div class="body-bot">
-				
-				
-			</div>
 		</div>
 	</div>
 	
@@ -168,6 +162,7 @@
 		</div>
 		<div class="top-row">
 			<label>Hit Points: <input type="number" name="attr_hitpoints" value="0"></label>
+			<label>Bulk: <input type="number" name="attr_bulk" value="0"></label>
 		</div>
 		<div class="attacks">
 			<div style="grid-row: 1; grid-column: span 4; text-align: center;"><h3>Attacks</h3></div>
@@ -975,10 +970,10 @@
 	
 </script>
 
-<!--Light Pistol-->
+<!--Submachine Guns-->
 <script type="text/worker">
-	const checkboxList = ["light_pistol_rank_1", "light_pistol_rank_2"];
-	const hiddenField = "light_pistol_mod";
+	const checkboxList = ["submachine_rank_1", "submachine_rank_2"];
+	const hiddenField = "submachine_mod";
 	console.log("cunt");
 	checkboxList.forEach(checkbox => {
 		on(`change:${checkbox}`, function() {
@@ -1008,6 +1003,1130 @@
 	
 </script>
 
+<!--Light Melee Weapons-->
+<script type="text/worker">
+	const checkboxList = ["light_melee_rank_1", "light_melee_rank_2"];
+	const hiddenField = "light_melee_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+	
+</script>
+
+<!--Sneak-->
+<script type="text/worker">
+	const checkboxList = ["sneak_rank_1", "sneak_rank_2"];
+	const hiddenField = "sneak_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Piloting-->
+<script type="text/worker">
+	const checkboxList = ["piloting_rank_1", "piloting_rank_2"];
+	const hiddenField = "piloting_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Diligence-->
+<!--Perception-->
+<script type="text/worker">
+	const checkboxList = ["perception_rank_1", "perception_rank_2"];
+	const hiddenField = "perception_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--First Aid-->
+<script type="text/worker">
+	const checkboxList = ["first_aid_rank_1", "first_aid_rank_2"];
+	const hiddenField = "first_aid_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Insight-->
+<script type="text/worker">
+	const checkboxList = ["insight_rank_1", "insight_rank_2"];
+	const hiddenField = "insight_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Tracking-->
+<script type="text/worker">
+	const checkboxList = ["tracking_rank_1", "tracking_rank_2"];
+	const hiddenField = "tracking_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Arcana-->
+<script type="text/worker">
+	const checkboxList = ["arcana_rank_1", "arcana_rank_2"];
+	const hiddenField = "arcana_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Diligence-->
+<script type="text/worker">
+	const checkboxList = ["diligence_piloting_rank_1", "diligence_piloting_rank_2"];
+	const hiddenField = "diligence_piloting_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Smart Weapons-->
+<script type="text/worker">
+	const checkboxList = ["smart_weapons_rank_1", "smart_weapons_rank_2"];
+	const hiddenField = "smart_weapons_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Appeal-->
+<!--Persuasion-->
+<script type="text/worker">
+	const checkboxList = ["persuasion_rank_1", "persuasion_rank_2"];
+	const hiddenField = "persuasion_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Performance-->
+<script type="text/worker">
+	const checkboxList = ["performance_rank_1", "performance_rank_2"];
+	const hiddenField = "performance_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Intimidation-->
+<script type="text/worker">
+	const checkboxList = ["intimidation_rank_1", "intimidation_rank_2"];
+	const hiddenField = "intimidation_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Deception-->
+<script type="text/worker">
+	const checkboxList = ["deception_rank_1", "deception_rank_2"];
+	const hiddenField = "deception_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Seduction-->
+<script type="text/worker">
+	const checkboxList = ["seduction_rank_1", "seduction_rank_2"];
+	const hiddenField = "seduction_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Barter-->
+<script type="text/worker">
+	const checkboxList = ["barter_rank_1", "barter_rank_2"];
+	const hiddenField = "barter_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Diplomacy-->
+<script type="text/worker">
+	const checkboxList = ["diplomacy_rank_1", "diplomacy_rank_2"];
+	const hiddenField = "diplomacy_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Smarts-->
+<!--Medicine-->
+<script type="text/worker">
+	const checkboxList = ["medicine_rank_1", "medicine_rank_2"];
+	const hiddenField = "medicine_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Chemistry-->
+<script type="text/worker">
+	const checkboxList = ["chemistry_rank_1", "chemistry_rank_2"];
+	const hiddenField = "chemistry_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Engineering-->
+<script type="text/worker">
+	const checkboxList = ["engineering_rank_1", "engineering_rank_2"];
+	const hiddenField = "engineering_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Smart Smart Weapons-->
+<script type="text/worker">
+	const checkboxList = ["smart_smart_weapons_rank_1", "smart_smart_weapons_rank_2"];
+	const hiddenField = "smart_smart_weapons_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Computer Use-->
+<script type="text/worker">
+	const checkboxList = ["computer_use_rank_1", "computer_use_rank_2"];
+	const hiddenField = "computer_use_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Knowledge-->
+<script type="text/worker">
+	const checkboxList = ["knowledge_rank_1", "knowledge_rank_2"];
+	const hiddenField = "knowledge_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Archeology-->
+<script type="text/worker">
+	const checkboxList = ["archeology_rank_1", "archeology_rank_2"];
+	const hiddenField = "archeology_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Spellcasting-->
+<!--Fortune-->
+<script type="text/worker">
+	const checkboxList = ["fortune_rank_1", "fortune_rank_2"];
+	const hiddenField = "fortune_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Aggression-->
+<script type="text/worker">
+	const checkboxList = ["aggression_rank_1", "aggression_rank_2"];
+	const hiddenField = "aggression_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Inquisitorial-->
+<script type="text/worker">
+	const checkboxList = ["inquisitorial_rank_1", "inquisitorial_rank_2"];
+	const hiddenField = "inquisitorial_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Vanguard-->
+<script type="text/worker">
+	const checkboxList = ["vanguard_rank_1", "vanguard_rank_2"];
+	const hiddenField = "vanguard_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Seeker-->
+<script type="text/worker">
+	const checkboxList = ["seeker_rank_1", "seeker_rank_2"];
+	const hiddenField = "seeker_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Seismic-->
+<script type="text/worker">
+	const checkboxList = ["seismic_rank_1", "seismic_rank_2"];
+	const hiddenField = "seismic_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Domination-->
+<script type="text/worker">
+	const checkboxList = ["domination_rank_1", "domination_rank_2"];
+	const hiddenField = "domination_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Enhancement-->
+<script type="text/worker">
+	const checkboxList = ["enhancement_rank_1", "enhancement_rank_2"];
+	const hiddenField = "enhancement_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Reaver-->
+<script type="text/worker">
+	const checkboxList = ["reaver_rank_1", "reaver_rank_2"];
+	const hiddenField = "reaver_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Kinetic-->
+<script type="text/worker">
+	const checkboxList = ["kinetic_rank_1", "kinetic_rank_2"];
+	const hiddenField = "kinetic_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
+
+<!--Arcana-->
+<script type="text/worker">
+	const checkboxList = ["arcana_rank_1", "arcana_rank_2"];
+	const hiddenField = "arcana_mod";
+	console.log("cunt");
+	checkboxList.forEach(checkbox => {
+		on(`change:${checkbox}`, function() {
+			
+			console.log(`cunty cunt cunt ${checkbox}`);
+
+			getAttrs([checkbox, hiddenField], function(values) {
+				
+				let newValue = parseInt(values[hiddenField]);
+
+				console.log(newValue);
+				if(values[checkbox] === 'on'){
+					newValue += 2;
+					console.log(newValue);
+				}else{
+					newValue -= 2;
+					console.log(newValue);
+				}
+
+				setAttrs({
+					[hiddenField]: newValue
+					
+				});
+			});
+		});
+	});
+</script>
 
 <!--script to change attributes of races on the sheet, if Jooooooh adds more might can it and have people go manual-->
 <script type="text/worker">
