@@ -134,22 +134,23 @@
 	
 	<div class="sheet-inventory">
 		<div class="inventory">
-			<!--<img class="inventory-image" src="https://i.pinimg.com/564x/bf/8c/2a/bf8c2a35473ceaf53f728f2b79f65104.jpg">-->
-			
-			<div class="inventory-table">				
-				<label style="grid-row: 1; grid-column: 1;">Inventory Name</label>
-				<label style="grid-row: 1; grid-column: 2;">Slot</label>
-				<label style="grid-row: 1; grid-column: 3;">Rarity</label>
-				<div style="grid-row: 2; grid-column: 1/span 3; ">
-					<fieldset class="repeating_attacks" >
-						<input type="text" name="attr_inventory_name" style="width: 50px; grid-column: 1;"/>
-						<input type="number" name="attr_slot" style="grid-column: 2;"/>
-						<input type="text" name="attr_rarity" style="width: 100px; grid-column: 3;"/>
-					</fieldset>
-				</div>
-
+			<div class="inventory-text">
+				<label>Inventory:</label>
+				<textarea name="attr_inventory"  value=""></textarea>
 			</div>
-		</div>
+			<div class="talent">
+				<label>Talents:</label>
+				<textarea name="attr_talents" value=""></textarea>
+			</div>
+			<div class="background">
+				<label>Background:</label>
+				<textarea name="attr_background_desc" value=""></textarea>
+			</div>
+			<div class="description">
+				<label>Description:</label>
+				<textarea name="attr_description" value=""></textarea>
+			</div>
+		</div>	
 	</div>
 	<div class="sheet-attacks">
 		<div class="top-row">
