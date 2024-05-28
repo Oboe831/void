@@ -163,56 +163,102 @@
   border: 1px olive dashed;
 }
 
-
 .charsheet .repcontainer[data-groupname=repeating_weapons]>div,
 .charsheet .attacks-table-header{
   display: grid;
-
-  grid-template-areas: 
-  "weapon range damage ammunition";
+  grid-template-columns: 5;
   border: 1px wheat solid;
 }
 
-.charsheet .weapon-header{
-  grid-area: weapon;
-  text-align: left;
+.charsheet .header-weapon{
+  grid-column: 1;
 }
 
-.charsheet .range-header{
-  grid-area: range;
-  padding-right: 2px;
-  text-align: center;
+.charsheet .header-range{
+  grid-column: 2;
 }
 
-.charsheet .damage-header{
-  grid-area: damage;
-  padding-left: 26px;
-  text-align: center;
+.charsheet .header-damage{
+  grid-column: 3;
 }
 
-.charsheet .ammunition-header{
-  grid-area: ammunition;
-  text-align: right;
+.charsheet .header-ammunition{
+  grid-column: 4;
+}
+
+.charsheet .header-magazine{
+  grid-column: 5;
 }
 
 .charsheet .attacks-weapon{
-  grid-area: weapon;
-  width: 75%;
+  grid-column: 1;
+  width: 100px;
 }
 
 .charsheet .attacks-range{
-  grid-area: range;
-  width: 50%;
+  grid-column: 2;
+  width: 50px;
 }
 
 .charsheet .attacks-damage{
-  grid-area: damage;
-  width: 50%;
+  grid-column: 3;
 }
 
 .charsheet .attacks-ammunition{
-  grid-area: ammunition;
-  width: 50%;
+  grid-column: 4;
+}
+
+.charsheet .attacks-magazine{
+  grid-column: 5;
+}
+
+.charsheet .repcontainer[data-groupname=repeating_armour]>div,
+.charsheet .armour-table-header{
+  display: grid;
+  grid-template-columns: 5;
+  border: 1px wheat solid;
+}
+
+.charsheet .header-armour{
+  grid-column: 1;
+}
+
+.charsheet .header-ar{
+  grid-column: 2;
+}
+
+.charsheet .header-er{
+  grid-column: 3;
+}
+
+.charsheet .header-bulk{
+  grid-column: 4;
+}
+
+.charsheet .header-special{
+  grid-column: 5;
+}
+
+.charsheet .armour-armour{
+  grid-column: 1;
+  width: 100px;
+}
+
+.charsheet .armour-ar{
+  grid-column: 2;
+  width: 50px;
+}
+
+.charsheet .armour-er{
+  grid-column: 3;
+}
+
+.charsheet .armour-bulk{
+  grid-column: 4;
+}
+
+.charsheet .armour-special{
+  grid-column: 5;
 }
 
 label, h3, h2{

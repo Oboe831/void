@@ -57,7 +57,7 @@
 				</div>
 				<div class="attribute">
 					<h2>Agility: <input type="number" name="attr_agility" value="0" /></h2>
-					<label>Acrobatics <input type="checkbox" name="attr_acrobatics_rank_1"> <input type="checkbox" name="attr_acrobatics_rank_2"><input type="hidden" name="attr_acrobatics_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{agility}+@{acrobatics_mod})d6>?{Target DC|4}" name="roll_acrobatics" class="sheet-skill-button"></button></label>
+					<label>Acrobatics <input type="checkbox" name="attr_acrobatics_rank_1"> <input type="checkbox" name="attr_acrobatics_rank_2"><input type="hidden" name="attr_acrobatics_mod" value="0"><button type="roll" value="/roll (??{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{agility}+@{acrobatics_mod})d6>?{Target DC|4}" name="roll_acrobatics" class="sheet-skill-button"></button></label>
 					<label>Balance <input type="checkbox" name="attr_balance_rank_1"> <input type="checkbox" name="attr_balance_rank_2"><input type="hidden" name="attr_balance_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{agility}+@{balance_mod})d6>?{Target DC|4}" name="roll_balance" class="sheet-skill-button"></button></label>
 					<label>Light Pistols <input type="checkbox" name="attr_light_pistols_rank_1"> <input type="checkbox" name="attr_light_pistols_rank_2"><input type="hidden" value="0" name="attr_light_pistol_mod"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{agility}+@{light_pistol_mod})d6>?{Target DC|4}" name="roll_light_pistol" class="sheet-skill-button"></button></label>
 					<label>Revolvers <input type="checkbox" name="attr_agility_revolver_rank_1"> <input type="checkbox" name="attr_agility_revolver_rank_2"><input type="hidden" value="0" name="attr_agility_revolver_mod"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{agility}+@{agility_revolver_mod})d6>?{Target DC|4}" name="roll_agility_revolver" class="sheet-skill-button"></button></label>
@@ -77,7 +77,7 @@
 					<label>Tracking <input type="checkbox" name="attr_tracking_rank_1"> <input type="checkbox" name="attr_tracking_rank_2"><input type="hidden" name="attr_tracking_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{diligence}+@{tracking_mod})d6>?{Target DC|4}" name="roll_tracking" class="sheet-skill-button"></button></label>
 					<label>Arcana <input type="checkbox" name="attr_arcana_rank_1"> <input type="checkbox" name="attr_arcana_rank_2"><input type="hidden" name="attr_arcana_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{diligence}+@{arcana_mod})d6>?{Target DC|4}" name="roll_arcana" class="sheet-skill-button"></button></label>
 					<label>Piloting <input type="checkbox" name="attr_diligence_piloting_rank_1"> <input type="checkbox" name="attr_diligence_piloting_rank_2"><input type="hidden" value="0" name="attr_diligence_piloting_mod"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{diligence}+@{diligence_piloting_mod})d6>?{Target DC|4}" name="roll_piloting" class="sheet-skill-button"></button></label>
-					<label>Smart Weapons <input type="checkbox" name="attr_smart_weapons_rank_1"> <input type="checkbox" name="attr_smart_weapons_rank_2"><input type="hidden" value="0" name="attr_smart_weapons_mod"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{diligence}+@{smart_weapons_mod})d6>?{Target DC|4}" name="roll_smart_weapons" class="sheet-skill-button"></button></label>
+					<label>Smart Weapons <input type="checkbox" name="attr_smart_weapons_rank_1"> <input type="checkbox" name="attr_smart_weapons_rank_2"><input type="hidden" value="0" name="attr_smart_weapons_mod"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{diligence}+@{smart_weapons_mod})d6>?{Target DC|4}" name="roll_smart_weapons_diligence" class="sheet-skill-button"></button></label>
 					<fieldset class="repeating_diligenceSkills">
 						<label><input type="text" name="attr_diligence_skill_name" style="width: 100px;"><input type="checkbox" name="attr_diligence_skill_1"> <input type="checkbox" name="attr_diligence_skill_2"><input type="hidden" name="attr_diligence_skill_mod" value="0"><button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{diligence}+@{diligence_skill_mod})d6>?{Target DC|4}" name="roll_diligence_skill" class="sheet-skill-button"></button></label>
 					</fieldset>
@@ -162,23 +162,106 @@
 			<label>Energy Resistance: <input type="number" name="attr_energy_resistance" value="10" /></label> 
 		</div>
 		<div class="top-row">
-			<label>Hit Points: <input type="number" name="attr_hitpoints" value="0"></label>
+			<label>Hit Points: <input type="number" name="attr_hitpoints" value="0"> / <input type="number" name="attr_hitpoints_max" value="0"></label>
 			<label>Bulk: <input type="number" name="attr_bulk" value="0"></label>
 		</div>
 		<div class="attacks">
 			<div style="grid-row: 1; grid-column: span 4; text-align: center;"><h3>Attacks</h3></div>
 
 			<div class="attacks-table-header">
-				<label class="weapon-header">Weapon</label>
-				<label class="range-header">Range</label>
-				<label class="damage-header">Damage</label>
-				<label class="ammunition-header">Ammo</label>
+				<div style="grid-row: 1; grid-column: auto;">
+					<label>Unarmed<button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{brawn}+@{unarmed_mod})d6>?{Target DC|4}" name="roll_unarmed_attack" class="sheet-skill-button"></button> </label>
+				</div>
+				<div style="grid-row: 1; grid-column: auto;">
+					<label>Heavy Weapons <button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{brawn}+@{heavy_weapons_mod})d6>?{Target DC|4}" name="roll_heavy_weapons_attack" class="sheet-skill-button"></button></label>
+				</div>
+				<div style="grid-row: 1; grid-column: auto;">
+					<label>Melee Weapons <button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{brawn}+@{melee_weapons_mod})d6>?{Target DC|4}" name="roll_melee_weapons_attack" class="sheet-skill-button"></button> </label>
+				</div>
+				<div style="grid-row: 1; grid-column: auto;">
+					<label>Bulk Revolvers <button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{brawn}+@{revolvers_mod})d6>?{Target DC|4}" name="roll_revolvers_attack" class="sheet-skill-button"></button></label>
+				</div>
+				<div style="grid-row: 2; grid-column: auto;">
+					<label>Light Pistols <button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{agility}+@{light_pistol_mod})d6>?{Target DC|4}" name="roll_light_pistol_attack" class="sheet-skill-button"></button></label>
+				</div>
+				<div style="grid-row: 2; grid-column: auto;">
+					<label>Agility Revolvers <button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{agility}+@{agility_revolver_mod})d6>?{Target DC|4}" name="roll_agility_revolver_attack" class="sheet-skill-button"></button></label>
+				</div>
+				<div style="grid-row: 2; grid-column: auto;">
+					<label>Submachine Guns <button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{agility}+@{submachine_mod})d6>?{Target DC|4}" name="roll_submachine_attack" class="sheet-skill-button"></button></label>
+				</div>
+				<div style="grid-row: 2; grid-column: auto;">
+					<label>Light Melee Weapons <button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{agility}+@{light_melee_mod})d6>?{Target DC|4}" name="roll_light_melee_attack" class="sheet-skill-button"></button></label>
+				</div>
+				<div style="grid-row: 3; grid-column: 2;">
+					<label>Dil Smart Weapons <button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{diligence}+@{smart_weapons_mod})d6>?{Target DC|4}" name="roll_smart_weapons_diligence_attack" class="sheet-skill-button"></button></label>
+				</div>
+				<div style="grid-row: 3; grid-column: 3;">
+					<label>Smart Smart Weapons<button type="roll" value="/roll (?{Specialisation | No,0 &#124; Yes,2  &#125;+?{Assistance? | 0}+@{smarts}+@{smart_smart_weapons_skill_mod})d6>?{Target DC|4}" name="roll_smart_smart_weapons_attacks" class="sheet-skill-button"></button></label>
+				</div>
 			</div>
 			<fieldset class="repeating_weapons">
-				<input type="text" name="attr_weapon_name" class="attacks-weapon">
-				<input type="text" name="attr_weapon_range" class="attacks-range">
-				<input type="number" name="attr_weapon_damage" class="attacks-damage">
-				<input type="number" name="attr_weapon_ammunition" class="attacks-ammunition">
+				<div class="header-weapons">
+					<label >Weapon</label>
+					<input type="text" name="attr_weapon_name" class="attacks-weapon">
+					<button type="roll" value="/r @{weapon_damage} + ?{Number of success | 0} - ?{AR or ER value | 0}"></button>
+				</div>
+				<div class="header-range">
+					<label>Range</label>
+					<input type="text" name="attr_weapon_range" class="attacks-range">
+				</div>
+				<div class="header-damage">
+					<label>Damage</label>
+					<input type="number" name="attr_weapon_damage" class="attacks-damage" value="0">
+				</div>
+				<div class="header-ammunition">
+					<label>Ammo</label>
+					<input type="number" name="attr_weapon_ammunition" class="attacks-ammunition">
+				</div>
+				<div class="header-magazine">
+					<label>Magazine</label>
+					<input type="number" name="attr_weapon_magazine" class="attacks-magazine" value="0"> / 
+					<input type="number" name="attr_weapon_magazine_max" value="0">
+				</div>
+			</fieldset>
+			<h2>Weapon Modifications</h2>
+			<fieldset class="repeating_weapon_modifications">
+				<div style="display: flex;">
+					<label>Weapon Name <input type="text" name="attr_weapons_modification_name" style="width: 100px;"> </label>
+					<label>Mod <input type="text" name="attr_weapons_modifications_modifications" style="width: 200px;"></label>
+					<label>Type <input type="text" name="attr_weapons_modification_type" style="width: 100px;"></label>
+				</div>
+			</fieldset>
+			<h2>Armour</h2>
+			<fieldset class="repeating_armour">
+				<div class="header-armour">
+					<label >Armour</label>
+					<input type="text" name="attr_armour_armour" class="armour-armour">
+				</div>
+				<div class="header-ar">
+					<label>AR</label>
+					<input type="number" name="attr_armour_ar" class="armour-ar" value="0">
+				</div>
+				<div class="header-er">
+					<label>ER</label>
+					<input type="number" name="attr_armour_er" class="armour-er" value="0">
+				</div>
+				<div class="header-bulk">
+					<label>Bulk</label>
+					<input type="number" name="attr_armour_bulk" class="armour-bulk" value="0">
+				</div>
+				<div class="header-special">
+					<label>Special Mods</label>
+					<input type="text" name="attr_armour_special" class="armour-special" value="0">
+				</div>
+			</fieldset>
+			<h2>Armour Modifications</h2>
+			<fieldset class="repeating_armour_modifications">
+				<div style="display: flex;">
+					<label>Armour Name <input type="text" name="attr_armour_modification_name" style="width: 100px;"> </label>
+					<label>Mod <input type="text" name="attr_armour_modifications_modifications" style="width: 200px;"></label>
+					<label>Type <input type="text" name="attr_armour_modification_type" style="width: 100px;"></label>
+				</div>
 			</fieldset>
 		</div>
 	</div>
